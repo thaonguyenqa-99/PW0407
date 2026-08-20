@@ -11,9 +11,9 @@ export class DownloadFilePage {
         await this.page.goto('https://the-internet.herokuapp.com/download');
     }
 
-    async waitForDownload() {
+    async waitForDownload(filename: string) {
         const downloadPromise = this.page.waitForEvent('download');
-        await this.page.getByRole('link', { name: 'image.png' }).click();
+        await this.page.getByRole('link', { name: filename }).click();
         const download = await downloadPromise;
         return download;
     }

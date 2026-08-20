@@ -42,6 +42,10 @@
 
 import { test, expect } from './Fixtures/heroku.fixtures';
 
+test.use({
+    viewport: { width: 400, height: 912 },
+});
+
 test.describe('happy paths', () => {
     test("login successful with valid credentials", {
         tag: ['@wip', '@smoke'], annotation: {
